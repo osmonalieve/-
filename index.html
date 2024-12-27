@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Арзуу - Онлайн Дүкөн</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <button id="theme-toggle">Күндүзгү режим</button>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Арзуу</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Башкы бет</a></li>
+                    <li><a href="#">Товарлар</a></li>
+                    <li><a href="#">Каттоо</a></li>
+                    <li><a href="#">Жөлөкчү</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Күнүмдүк керектүү товарлар менен таанышып чыгыңыз!</h2>
+            <p>Арзуу - бардык керектүүлөрдү бир жерден тап! Жаңы коллекциялар жана супер арзандатуу!</p>
+            <a href="#" class="cta-button">Товарлар менен таанышыңыз</a>
+        </div>
+    </section>
+    <script>
+        const buyButtons = document.querySelectorAll('.product button');
+    
+        buyButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const productName = event.target.closest('.product').querySelector('p').innerText;
+                alert(`${productName} карзинага кошулду!`);
+            });
+        });
+    </script>
+
+    <!-- Издөө формасы жана категориялар -->
+<section class="search-section">
+    <h2>Продукциялар боюнча издеңиз</h2>
+    
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Эсептөөчү издеңиз..." />
+        <button id="search-btn">Издөө</button>
+    </div>
+
+    <div class="categories">
+        <h3>Категориялар:</h3>
+        <ul>
+            <li><a href="#">Кийим</a></li>
+            <li><a href="#">Велосипеддер</a></li>
+            <li><a href="#">Топтор</a></li>
+            <li><a href="#">Оюнчуктар</a></li>
+        </ul>
+    </div>
+</section>
+
+<script>
+    function validateForm() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        
+        if (name === '' || email === '') {
+            alert('Бардык талааларды толтуруңуз!');
+            return false;
+        }
+        alert('Каттоо ийгиликтүү!');
+        return true;
+    }
+</script>
+
+<form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Атыңыз">
+    <input type="email" id="email" placeholder="Электрондук почта">
+    <button type="submit">Каттоо</button>
+</form>
+    <!-- Product Section -->
+    <section class="products">
+        <h3>Арзуу дүкөнүнүн товарлары</h3>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Товар 1">
+            <p>Товар 1</p>
+            <p>Баасы: 500 сом</p>
+            <button>Сатып алуу</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Товар 2">
+            <p>Товар 2</p>
+            <p>Баасы: 700 сом</p>
+            <button>Сатып алуу</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Арзуу. Бардык укуктар корголгон.</p>
+    </footer>
+    <script src="/arzuu.js"></script>
+</body>
+</html>
